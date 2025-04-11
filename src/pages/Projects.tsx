@@ -36,7 +36,6 @@ const Projects = () => {
         />
       </section>
 
-      {/* 🔸 Minor Projects */}
       <section className="space-y-8">
         <h2 className="text-2xl font-semibold">Other Projects</h2>
         <div className="grid sm:grid-cols-2 gap-6">
