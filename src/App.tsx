@@ -6,6 +6,7 @@ import About from './pages/About';
 
 function App() {
   return (
+    <div className="font-mono">
     <Router>
       <div className="min-h-screen bg-[#242424] text-white">
         <Navbar />
@@ -18,6 +19,7 @@ function App() {
         </main>
       </div>
     </Router>
+    </div>
   );
 }
 

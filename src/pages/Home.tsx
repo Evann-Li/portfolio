@@ -4,7 +4,7 @@ import TechStackCubes from "@/components/TechCube";
 
 const Home = () => {
   return (
-    <div className="flex flex-col lg:flex-row max-w-6xl mx-auto p-6 font-sans gap-10">
+    <div className="flex flex-col lg:flex-row max-w-6xl mx-auto p-6 gap-10">
       <aside className="lg:w-1/3 space-y-4">
         <div>
           <h1 className="text-4xl font-bold">Evann Li</h1>
@@ -14,15 +14,38 @@ const Home = () => {
         </div>
 
         <div className="space-y-2 text-sm">
-          <p className="flex items-center gap-2 text-neutral-300 hover:text-white transition">
-            <Github size={16} /> <a href="https://github.com/Evann-Li">GitHub</a>
-          </p>
-          <p className="flex items-center gap-2 text-neutral-300 hover:text-white transition">
-            <Mail size={16} /> <a href="mailto:evannli450@gmail.com">Email</a>
-          </p>
-          <p className="flex items-center gap-2 text-neutral-300 hover:text-white transition">
-            <Linkedin size={16} /> <a href="https://www.linkedin.com/in/evann-li/">LinkedIn</a>
-          </p>
+        <p className="flex items-center gap-2 text-neutral-300 hover:text-white transition">
+          <Github size={16} />
+          <a
+            href="https://github.com/Evann-Li"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+        </p>
+
+        <p className="flex items-center gap-2 text-neutral-300 hover:text-white transition">
+          <Mail size={16} />
+          <a
+            href="mailto:evannli450@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Email
+          </a>
+        </p>
+
+        <p className="flex items-center gap-2 text-neutral-300 hover:text-white transition">
+          <Linkedin size={16} />
+          <a
+            href="https://www.linkedin.com/in/evann-li/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+        </p>
         </div>
       </aside>
 
@@ -65,14 +88,42 @@ const Home = () => {
 
         <TechStackCubes />
 
-        <div className="pt-4 flex flex-wrap gap-4">
-          <Button variant="secondary" className="flex items-center gap-2">
-            <Download size={16} /> Download Resume
-          </Button>
-          <Button variant="outline" className="flex items-center gap-2">
-            <Github size={16} /> Website Code
-          </Button>
+        <div className="pt-6 flex flex-col sm:flex-row justify-center items-center gap-4 font-bold">
+        <a
+            href="/Resume.pdf"
+            download
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-52 h-11"
+          >
+            <Button
+              variant="secondary"
+              className="w-full h-full flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-[0_0_16px_#E6E1F3] font-bold"
+            >
+              <Download
+                size={16}
+                className="transition-transform duration-300 group-hover:scale-105"
+              />
+              Download Resume
+            </Button>
+          </a>
+          <a
+            href="https://github.com/Evann-Li/portfolio"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-52 h-11 group bg-black text-white border border-white px-4 py-2 rounded-md flex items-center justify-center gap-2 hover:bg-white hover:text-black transition-colors hover:shadow-[0_0_12px_#ffffff]"
+          >
+            <Github
+              size={16}
+              className="transition-transform group-hover:rotate-[360deg] duration-500"
+              stroke="currentColor"
+              strokeWidth={2}
+            />
+            Website Code
+          </a>
         </div>
+
+
       </main>
     </div>
   );
