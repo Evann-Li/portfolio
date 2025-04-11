@@ -1,0 +1,90 @@
+.cube-container {
+    perspective: 1000px;
+    width: 150px;
+    height: 150px;
+  }
+  
+  .cube {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: spinCube 16s infinite linear;
+  }
+  
+  .group:hover .cube {
+    animation-play-state: paused;
+  }
+  
+  .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #3f3f3f;
+    font-family: monospace;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    backface-visibility: hidden;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .front  { transform: rotateY(0deg) translateZ(75px); }
+  .back   { transform: rotateY(180deg) translateZ(75px); }
+  .right  { transform: rotateY(90deg) translateZ(75px); }
+  .left   { transform: rotateY(-90deg) translateZ(75px); }
+  .top    { transform: rotateX(90deg) translateZ(75px); }
+  .bottom { transform: rotateX(-90deg) translateZ(75px); }
+  
+  @keyframes spinCube {
+    0%   { transform: rotateX(0deg) rotateY(0deg); }
+    100% { transform: rotateX(360deg) rotateY(360deg); }
+  }
+  
+  .cube-frontend .face {
+    background-color: #1e3a8a;
+  }
+  .cube-backend .face {
+    background-color: #065f46;
+  }
+  .cube-devops .face {
+    background-color: #7c3aed;
+  }
+  .cube-scripting .face {
+    background-color: #9a3412;
+  }
+  .cube-tools .face {
+    background-color: #4b5563;
+  }
+  
+
+.cube-frontend .face:hover {
+    background: linear-gradient(135deg, #3b82f6, #60a5fa); 
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+  }
+  
+  .cube-backend .face:hover {
+    background: linear-gradient(135deg, #10b981, #34d399);
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+  }
+  
+  .cube-devops .face:hover {
+    background: linear-gradient(135deg, #a855f7, #c084fc);
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+  }
+  
+  .cube-scripting .face:hover {
+    background: linear-gradient(135deg, #fb923c, #f59e0b);
+    box-shadow: 0 0 15px rgba(251, 146, 60, 0.4);
+  }
+  
+  .cube-tools .face:hover {
+    background: linear-gradient(135deg, #6b7280, #9ca3af);
+    box-shadow: 0 0 15px rgba(107, 114, 128, 0.4);
+  }
+  
+  
