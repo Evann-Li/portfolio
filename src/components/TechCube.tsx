@@ -1,4 +1,3 @@
-import React from "react";
 import "./TechCube.css";
 
 const techGroups = {
