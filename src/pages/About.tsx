@@ -27,7 +27,7 @@ const About = () => {
           <li>
             • Captain, coach, and referee with Richmond Cosom Floor Hockey Association 🏑  
             <span className="block text-sm text-gray-400 ml-4">
-              — Coached youth, managed teams, and was awarded the Marcel Doucet Scholarship for Sportsmanship.
+              — Coach youth teams, manage an adult team, and was awarded the Marcel Doucet Scholarship for Sportsmanship and Dedication.
             </span>
           </li>
           <li>
