@@ -1,14 +1,15 @@
 import React from "react";
 import { Github, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface MajorProjectProps {
   title: string;
-  overview: string;
+  overview: string | React.ReactNode;
   tech: string[];
   heroImage: string;
-  supportImages: string[];
   siteUrl?: string;
   githubUrl?: string;
+  slug?: string;
 }
 
 const MajorProject: React.FC<MajorProjectProps> = ({
@@ -16,9 +17,9 @@ const MajorProject: React.FC<MajorProjectProps> = ({
   overview,
   tech,
   heroImage,
-  supportImages,
   siteUrl,
   githubUrl,
+  slug,
 }) => {
   return (
     <div className="space-y-6">
@@ -32,20 +33,13 @@ const MajorProject: React.FC<MajorProjectProps> = ({
       {/* Title & Overview */}
       <div>
         <h2 className="text-2xl font-bold text-white mb-2">{title}</h2>
-        <p className="text-gray-300 leading-relaxed">{overview}</p>
+        {typeof overview === "string" ? (
+          <p className="text-gray-300 leading-relaxed">{overview}</p>
+        ) : (
+          <div className="text-gray-300 leading-relaxed space-y-4">{overview}</div>
+        )}
       </div>
 
-      {/* Support Images */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 pt-4">
-        {supportImages.map((img, i) => (
-          <img
-            key={i}
-            src={img}
-            alt={`${title} screen ${i + 1}`}
-            className="w-full max-h-[200px] object-contain rounded-md shadow-md"
-          />
-        ))}
-      </div>
 
       {/* Tech Stack */}
       <div className="flex flex-wrap gap-2">
@@ -57,7 +51,7 @@ const MajorProject: React.FC<MajorProjectProps> = ({
       </div>
 
       {/* Optional Links */}
-      {(siteUrl || githubUrl) && (
+      {(siteUrl || githubUrl || slug) && (
         <div className="flex justify-center gap-6 pt-6">
           {siteUrl && (
             <a
@@ -86,6 +80,13 @@ const MajorProject: React.FC<MajorProjectProps> = ({
               />
               View Code
             </a>
+          )}
+          {slug && (
+            <Link to={`/projects/${slug}`}>
+            <button className="group flex items-center gap-2 bg-blue-600 text-white text-sm font-medium px-4 py-2 rounded-md hover:bg-blue-700 transition shadow-md hover:shadow-[0_0_20px_#3b82f6]">
+              Learn More
+            </button>
+          </Link>          
           )}
         </div>
       )}
