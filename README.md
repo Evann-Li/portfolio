@@ -2,7 +2,7 @@
 
 Welcome to my personal portfolio site, built to showcase my projects, skills, and experience as a full-stack web developer. This site is deployed with [Vercel](https://vercel.com) and built with modern front-end technologies.
 
-## 🖥️ Live Demo
+## 🖥️ Live Site
 
 🌐 [portfolio-evann-lis-projects.vercel.app](https://portfolio-evann-lis-projects.vercel.app)
 
